@@ -5,7 +5,7 @@ This is a personal profile website built with **HTML, CSS, and JavaScript**.
 
 ## 📂 Folder Structure  
 ```
-my-profile/  
+profile-website/  
 │—— index.html          # Home page  
 │—— about.html          # About page  
 │—— contact.html        # Contact page  
@@ -41,7 +41,7 @@ my-profile/
 ## 🎯 Installation & Usage  
 1️⃣ **Clone this repository:**  
    ```sh
-   git clone https://github.com/LongTruongPhamHai/my-profile.git
+   git clone https://github.com/LongTruongPhamHai/profile-website.git
    ```  
 2️⃣ **Open `index.html` in your browser**  
 
