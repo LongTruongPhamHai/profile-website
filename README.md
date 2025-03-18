@@ -10,7 +10,10 @@ profile-website/
 │—— about.html          # About page  
 │—— contact.html        # Contact page  
 │—— projects.html       # Projects page  
-│—— skills.html         # Skills page  
+│—— skills.html         # Skills page
+│—— package-lock.json   # Bootstrap file
+│—— package.json        # Bootstrap file
+│—— README.md           # Readme file
 │  
 ├—— assets/             # Resources  
 │   ├—— css/            # Stylesheets  
@@ -21,16 +24,16 @@ profile-website/
 │   │   ├—— script.js   # Main script  
 │   │   └—— form.js     # Form validation  
 │   │   
-│   ├—— images/         # Images  
-│   ├—— fonts/          # Fonts  
-│   └—— icons/          # Icons  
+│   └—— images/         # Images  
 │  
 ├—— components/         # Reusable components  
 │   ├—— header.html  
 │   └—— footer.html  
-│  
-└—— design/             # Design files  
-    └—— my-profile.fig  # Figma design  
+│
+├—— design/             # Design files  
+│   └—— my-profile.fig  # Figma design
+│
+└—— node_modules        # Bootstrap folder
 ```
 
 ## 🚀 Features  
@@ -49,7 +52,8 @@ profile-website/
 - **HTML**
 - **CSS**
 - **JavaScript** 
-- **Figma** 
+- **Figma**
+- **Bootstrap**
 
 ## 💌 Contact  
 - **GitHub:** https://github.com/LongTruongPhamHai
