@@ -53,7 +53,7 @@ profile-website/
 - **CSS**
 - **JavaScript** 
 - **Figma**
-- **Bootstrap**
+- **Bootstrap Icons**
 
 ## 💌 Contact  
 - **GitHub:** https://github.com/LongTruongPhamHai
