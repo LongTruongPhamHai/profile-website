@@ -37,7 +37,7 @@
                     <label>Title</label>
                     <input type="text" id="title-input">
                     <label>Content</label>
-                    <textarea name="" id="content-input" rows="3"></textarea>
+                    <textarea name="" id="content-input" rows="3" required></textarea>
                 </div>
                 <div class="form-button">
                     <button id="reset-button" onclick="resetButton()">
@@ -49,23 +49,24 @@
                 </div>
             </div>
         </div>
-
-        <div class="form-alert">
-            <div class="alert-content">
-                    <label>Status:</label>
-                    <input type="text" id="status-mail" value="Success!" readonly>
-                    <label>From:</label>
-                    <input type="email" id="email-from" value="example@email.com" readonly>
-                    <label>To:</label>
-                    <input type="email" id="email-to" value="longtruongphamhai@gmail.com" readonly>
-                    <label>Title:</label>
-                    <input type="text" id="title-output" value="Hello!" readonly>
-                    <label>Content</label>
-                    <textarea name="" id="content-output" rows="3" readonly>Hello Long!</textarea>
-                <button onclick="closeAlert()">Close</button>
-            </div>
-        </div>
     </main>
+
+    <div id="opacity-form"></div>
+
+    <div class="form-alert" id="form-alert">
+        <div class="alert-content">
+            <label>From:</label>
+            <input type="email" id="email-from" value="example@email.com" readonly>
+            <label>To:</label>
+            <input type="email" id="email-to" value="longtruongphamhai@gmail.com" readonly>
+            <label>Title:</label>
+            <input type="text" id="title-output" value="Hello!" readonly>
+            <label>Content</label>
+            <textarea name="" id="content-output" rows="3" readonly>Hello Long!</textarea>
+        </div>
+        <p>Thank you for reaching out! We have received your email and will respond as soon as possible.</p>
+        <button onclick="closeAlert()">Close</button>
+    </div>
 
     <div class="footer-placeholder" id="footer-placeholder"></div>
 </body>
