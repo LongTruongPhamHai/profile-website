@@ -1,5 +1,7 @@
 :root {
     --normal-text: #0E1F40;
+    --border-color: #0E1F40;
+    --readonly-border: #bcbcbc;
     --non-active-text: 0.25;
     --dark-blue: #099CFE;
     --medium-dark-blue: #9CD0FF;
@@ -7,7 +9,21 @@
     --light-blue: #DDEFFF;
     --active-blue: #69B7FF;
     --yellow: #FCFF50;
+    --facebook-color: #086DFF;
+    --linkedin-color: #0882BD;
+    --github-color: #22262A;
+    --tel-color: #45B931;
+    --facebook-hover-color: #0060e6;
+    --linkedin-hover-color: #0070a8;
+    --github-hover-color: #393e42;
+    --tel-hover-color: #349622;
+    --send-button: #006BE5;
+    --send-hover-button: #0055b6;
+    --reset-button: #D8D8D8;
+    --reset-hover-button: #a8a8a8;
 }
+
+/* * */
 
 * {
     margin: 0;
@@ -19,8 +35,27 @@
     /* border: 1px solid green; */
 }
 
+a
+{
+    text-decoration: none;
+}
+
+input
+{
+    outline: none;
+}
+
+textarea
+{
+    resize: none;
+    outline: none;
+}
+
+/* BODY */
+
 body {
-    height: 100vh;
+    height: 695px;
+    width: 1536px;
 }
 
 /* HEADER */
@@ -42,8 +77,8 @@ body {
 .header-nav-bar a {
     font-weight: bold;
     text-decoration: none;
-    margin-left: 3%;
-    margin-right: 3%;
+    margin-left: 90px;
+    margin-right: 90px;
     opacity: var(--non-active-text);
     font-size: 30px;
 }
@@ -59,8 +94,8 @@ body {
 }
 
 .header-text {
-    margin-left: 5%;
-    margin-top: 3%;
+    margin-left: 100px;
+    margin-top: 50px;
 }
 
 .header-text h1,
@@ -129,8 +164,8 @@ main {
     background-color: var(--active-blue);
 }
 
-.index-tab-button img {
-    height: 70px;
+.index-tab-button i {
+    font-size: 70px;
 }
 
 /* ABOUT */
@@ -153,7 +188,7 @@ main {
 
 .about-ava-image img {
     height: 300px;
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     border-radius: 20px;
 }
 
@@ -194,6 +229,10 @@ main {
     width: 250px;
 }
 
+.skill-group div:hover {
+    background-color: var(--active-blue);
+}
+
 .skill-group div h4 {
     font-size: 40px;
     margin-bottom: 20px;
@@ -205,6 +244,322 @@ main {
 
 /* PROJECTS */
 
+.project-main
+{
+    display: flex;
+}
 
+.project-list
+{
+    margin-left: auto;
+    margin-right: 40px;
+    height: 100%;
+}
+
+.project-list button, .project-list div
+{
+    padding: 10px 20px;
+    background-color: var(--medium-dark-blue);
+    margin-top: 13px;
+    border-radius: 20px;
+    border: none;
+    width: 500px;
+    text-align: left;
+}
+
+.project-list button:active
+{
+    background-color: var(--active-blue);
+}
+
+.project-list p
+{
+    font-size: 25px;
+}
+
+.project-preview
+{
+    margin-right: auto;
+    margin-left: 40px;
+    text-align: center;
+
+}
+
+.project-preview>div
+{
+    background-color: var(--medium-dark-blue);
+    height: 234px;
+    margin-top: 13px;
+    width: 500px;
+    border-radius: 25px;
+}
+
+.none-project
+{
+    display: block;
+    padding: 100px 40px;
+}
+
+.none-project>p
+{
+    font-size: 25px;
+    text-align: center;
+}
+
+.project-demo
+{
+    padding: 13px 25px;
+    display: none;
+    position: relative;
+}
+
+.project-demo img
+{
+    max-height: 180px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.project-demo a
+{
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+    right: 50px;
+    font-size: 20px;
+}
+
+.project-demo a i
+{
+    font-size: 20px;
+}
+
+.image-project
+{
+    display: none;
+}
+
+.link-project
+{
+    display: none;
+}
 
 /* CONTACT */
+
+.contact-main
+{
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 1px;
+}
+
+.contact-main h1
+{
+    text-align: center;
+    margin: 5px;
+}
+
+.contact-main>div
+{
+    display: grid;
+    grid-template-columns: 30% 60%;
+    column-gap: 10%;
+}
+
+.social-link
+{
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+    grid-template-rows: 55%;
+    height: 250px;
+}
+
+.social-account
+{
+    width: 110px;
+    height: 110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.social-link button
+{
+    width: 110px;
+    height: 110px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+
+.social-link button i
+{
+    font-size: 60px;
+    color: white
+}
+
+.social-link a #facebook
+{
+    background-color: var(--facebook-color);
+}
+
+.social-link a #linkedin
+{
+    background-color: var(--linkedin-color);
+}
+.social-link a #github
+{
+    background-color: var(--github-color);
+}
+.social-link #telephone
+{
+    background-color: var(--tel-color);
+}
+
+.social-link a #facebook:hover
+{
+    background-color: var(--facebook-hover-color);
+}
+
+.social-link a #linkedin:hover
+{
+    background-color: var(--linkedin-hover-color);
+}
+.social-link a #github:hover
+{
+    background-color: var(--github-hover-color);
+}
+.social-link #telephone:hover
+{
+    background-color: var(--tel-hover-color);
+}
+
+.contact-form
+{
+    height: 250px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 25px;
+    border: 2px solid var(--border-color);
+}
+
+.contact-form *
+{
+    font-size: 20px;
+}
+
+.form-input 
+{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.form-input label
+{
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.form-input input, .form-input textarea
+{
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.form-button
+{
+    text-align: right;
+}
+
+.form-button button
+{
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 2px solid var(--border-color);
+}
+
+.form-button #send-button
+{
+    background-color: var(--send-button);
+    color: white;
+}
+
+.form-button #send-button:hover
+{
+    background-color: var(--send-hover-button);
+}
+
+.form-button #reset-button
+{
+    background-color: var(--reset-button);
+}
+
+.form-button #reset-button:hover
+{
+    background-color: var(--reset-hover-button);
+}
+
+.form-button #send-button p, .form-button #send-button i
+{
+    color: white;
+}
+
+.form-button #reset-button p, .form-button #reset-button i
+{
+    color: var(--normal-text);
+}
+
+.form-alert
+{
+    display: none;
+    position: absolute;
+    height: 400px;
+    width: 700px;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    box-shadow: 10px 10px 5px var(--border-color);
+    background-color: white;
+    top: 25%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+
+.alert-content
+{
+    padding: 10px;
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.alert-content label
+{
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding: 5px;
+    font-size: 25px;
+}
+
+.alert-content input, .alert-content textarea
+{
+    border: 1px solid var(--readonly-border);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 25px;
+}
