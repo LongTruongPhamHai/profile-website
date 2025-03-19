@@ -65,22 +65,32 @@ body {
     background-image: url(/assets/images/background-header-image.jpg);
     background-size: auto 100%;
     background-position: center;
-    padding: 10px;
+    /* padding: 10px;
     padding-bottom: 30px;
-    height: 40%
+    height: 40%; */
+    /* GPT */
+    padding: 20px;
+    padding-bottom: 40px;
+    height: 40vh;
 }
 
 .header-nav-bar {
     text-align: center;
+    /* GPT */
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
 }
 
 .header-nav-bar a {
     font-weight: bold;
-    text-decoration: none;
-    margin-left: 90px;
-    margin-right: 90px;
+    margin-left: 50px;
+    margin-right: 50px;
     opacity: var(--non-active-text);
     font-size: 30px;
+    /* GPT */
+    transition: opacity 0.3s;
 }
 
 .header-nav-bar a:hover {
@@ -145,10 +155,6 @@ main {
     margin-right: auto;
 }
 
-.index-tab-link {
-    text-decoration: none;
-}
-
 .index-tab-button {
     padding: 20px;
     border-radius: 30px;
@@ -158,6 +164,9 @@ main {
     border: none;
     background-color: var(--medium-dark-blue);
     font-weight: bold;
+    /* GPT */
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .index-tab-button:hover {

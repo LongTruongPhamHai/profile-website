@@ -111,6 +111,7 @@ function sendButton() {
   const regexEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
   let checkEmail = regexEmail.test(emailValue);
+  let checkTitle = titleValue != "";
   let checkContent = contentValue != "";
   // console.log(checkEmail);
   // console.log(checkContent);
@@ -131,9 +132,21 @@ function sendButton() {
   }
 
   if (checkContent == true && checkEmail == true) {
-    if (confirm("You haven't entered a title! Do you want to continue?")) {
-      // let contactForm = [emailValue, titleValue, contentValue];
-      // console.log(contactForm);
+    if(checkTitle == false)
+    {
+      if (confirm("You haven't entered a title! Do you want to continue?")) {
+        // let contactForm = [emailValue, titleValue, contentValue];
+        // console.log(contactForm);
+  
+        document.getElementById("form-alert").style.display = "block";
+        document.getElementById("opacity-form").style.display = "block";
+  
+        document.getElementById("email-from").value = emailValue;
+        document.getElementById("title-output").value = titleValue;
+        document.getElementById("content-output").value = contentValue;
+      }
+    }
+    else {
 
       document.getElementById("form-alert").style.display = "block";
       document.getElementById("opacity-form").style.display = "block";
