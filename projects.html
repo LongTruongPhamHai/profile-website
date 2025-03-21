@@ -16,7 +16,7 @@
         <div class="project-list">
             <h1>Projects</h1>
 
-            <button class="project-button" onclick="openProject1()">
+            <!-- <button class="project-button" onclick="openProject1()">
                 <p>Contact form main</p>
             </button>
 
@@ -36,23 +36,35 @@
                 <div class="project-button">
                     <p>Other projects</p>
                 </div>
-            </a>
+            </a> -->
+
+            <button class="project-button" id="project-button1" onclick="openProject(1)">Contact form main</button>
+            <button class="project-button" id="project-button2" onclick="openProject(2)">Mortgage repayment calculator
+                main</button>
+            <button class="project-button" id="project-button3" onclick="openProject(3)">Coming soon!</button>
+            <a href="https://github.com/LongTruongPhamHai?tab=repositories" target="_blank"><button
+                    class="project-button" onclick="closeProject()">Other projects</button></a>
         </div>
 
         <div class="project-preview">
             <h1>Preview</h1>
 
             <div class="none-project" id="none-project">
-                <p id="none-project">Click on project to see a preview</p>
+                <p>Click on project to see a preview</p>
             </div>
 
             <div class="project-demo" id="project-demo">
                 <img src="/assets/images/contact-form-main-demo.png" class="image-project" id="image-project1" alt="">
-                <a href="https://github.com/LongTruongPhamHai/contact-form-main.git" target="_blank" class="link-project" id="link-project1">Open in GitHub<i class="bi bi-arrow-up-right"></i></a>
-                <img src="/assets/images/mortgage-payment-demo.png" class="image-project"  id="image-project2" alt="">
-                <a href="https://github.com/LongTruongPhamHai/mortgage-repayment-calculator-main" target="_blank" class="link-project" id="link-project2">Open in GitHub<i class="bi bi-arrow-up-right"></i></a>
+                <a href="https://github.com/LongTruongPhamHai/contact-form-main.git" target="_blank"
+                    class="link-project" id="link-project1">Open in GitHub<i class="bi bi-arrow-up-right"></i></a>
+
+                <img src="/assets/images/mortgage-payment-demo.png" class="image-project" id="image-project2" alt="">
+                <a href="https://github.com/LongTruongPhamHai/mortgage-repayment-calculator-main" target="_blank"
+                    class="link-project" id="link-project2">Open in GitHub<i class="bi bi-arrow-up-right"></i></a>
+
                 <img src="/assets/images/coming-soon.jpeg" class="image-project" id="image-project3" alt="Coming soon">
-                <a href="#" target="_blank" class="link-project" id="link-project3">Open in GitHub<i class="bi bi-arrow-up-right"></i></a>
+                <a href="#" target="_blank" class="link-project" id="link-project3">Open in GitHub<i
+                        class="bi bi-arrow-up-right"></i></a>
             </div>
         </div>
     </main>

@@ -126,7 +126,9 @@ body {
     font-weight: bold;
     color: white;
     font-size: 20px;
-    height: 10%;
+    /* height: 10%; */
+    /* GPT */
+    height: 10vh;
 }
 
 .footer-placeholder h1 {
@@ -139,7 +141,7 @@ body {
 main {
     padding: 10px;
     background-color: var(--light-blue);
-    height: 50%;
+    height: 50vh;
 }
 
 /* INDEX */
@@ -185,6 +187,8 @@ main {
     width: 80%;
     height: 100%;
     margin-top: 20px;
+    /* GPT */
+    gap: 40px;
 }
 
 .about-main div {
@@ -197,8 +201,10 @@ main {
 
 .about-ava-image img {
     height: 300px;
-    border: 1px solid var(--border-color);
-    border-radius: 20px;
+    /* GPT */
+    border: 3px solid var(--border-color);
+    border-radius: 15px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .about-content {
@@ -220,35 +226,44 @@ main {
 
 .skill-main {
     text-align: center;
+    /*  */
+    padding: 20px;
 }
 
 .skill-group {
-    display: flex;
+    /* display: flex; */
     margin: auto;
     width: 80%;
     margin-top: 10px;
+    /*  */
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 5%;
+    justify-content: center;
 }
 
-.skill-group div {
-    margin: auto;
-    padding: 20px;
+/* GPT */
+.skill-card {
+    padding: 25px;
     background-color: var(--medium-dark-blue);
-    border-radius: 30px;
-    height: 250px;
-    width: 250px;
+    border-radius: 20px;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.skill-group div:hover {
+.skill-card:hover {
     background-color: var(--active-blue);
+    transform: scale(1.05);
 }
 
-.skill-group div h4 {
-    font-size: 40px;
-    margin-bottom: 20px;
+.skill-card h4 {
+    font-size: 32px;
+    margin-bottom: 15px;
 }
 
-.skill-group div p {
-    font-size: 30px;
+.skill-card p {
+    font-size: 24px;
+    margin: 5px 0;
 }
 
 /* PROJECTS */
@@ -263,27 +278,33 @@ main {
     margin-left: auto;
     margin-right: 40px;
     height: 100%;
+    width: 500px;
+
 }
 
-.project-list button, .project-list div
+.project-button
 {
     padding: 10px 20px;
     background-color: var(--medium-dark-blue);
     margin-top: 13px;
     border-radius: 20px;
     border: none;
-    width: 500px;
+    width: 100%;
     text-align: left;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.project-list button:active
-{
-    background-color: var(--active-blue);
-}
-
-.project-list p
+.project-button a
 {
     font-size: 25px;
+}
+
+.project-button:hover
+{
+    background-color: var(--active-blue);
+    transform: scale(1.02);
 }
 
 .project-preview
@@ -291,7 +312,6 @@ main {
     margin-right: auto;
     margin-left: 40px;
     text-align: center;
-
 }
 
 .project-preview>div
@@ -301,6 +321,8 @@ main {
     margin-top: 13px;
     width: 500px;
     border-radius: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s;
 }
 
 .none-project
@@ -389,59 +411,63 @@ main {
 {
     width: 110px;
     height: 110px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.social-link button
-{
-    width: 110px;
-    height: 110px;
     border-radius: 20px;
     display: flex;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
     justify-content: center;
     border: none;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-.social-link button i
+.social-account:hover
+{
+    transform: scale(1.05);
+}
+
+.social-account i
 {
     font-size: 60px;
     color: white
 }
 
-.social-link a #facebook
+#facebook
 {
     background-color: var(--facebook-color);
 }
 
-.social-link a #linkedin
+#linkedin
 {
     background-color: var(--linkedin-color);
 }
-.social-link a #github
+
+#github
 {
     background-color: var(--github-color);
 }
-.social-link #telephone
+
+#telephone
 {
     background-color: var(--tel-color);
 }
 
-.social-link a #facebook:hover
+#facebook:hover
 {
     background-color: var(--facebook-hover-color);
 }
 
-.social-link a #linkedin:hover
+#linkedin:hover
 {
     background-color: var(--linkedin-hover-color);
 }
-.social-link a #github:hover
+
+#github:hover
 {
     background-color: var(--github-hover-color);
 }
-.social-link #telephone:hover
+
+#telephone:hover
 {
     background-color: var(--tel-hover-color);
 }

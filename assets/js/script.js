@@ -47,48 +47,27 @@ function setActiveLink() {
 
 // PROJECTS
 
-function openProject1() {
+// GPT
+function openProject(id) {
   document.getElementById("none-project").style.display = "none";
   document.getElementById("project-demo").style.display = "block";
-  document.getElementById("image-project1").style.display = "block";
-  document.getElementById("link-project1").style.display = "block";
-  document.getElementById("image-project2").style.display = "none";
-  document.getElementById("link-project2").style.display = "none";
-  document.getElementById("image-project3").style.display = "none";
-  document.getElementById("link-project3").style.display = "none";
-}
 
-function openProject2() {
-  document.getElementById("none-project").style.display = "none";
-  document.getElementById("project-demo").style.display = "block";
-  document.getElementById("image-project1").style.display = "none";
-  document.getElementById("link-project1").style.display = "none";
-  document.getElementById("image-project2").style.display = "block";
-  document.getElementById("link-project2").style.display = "block";
-  document.getElementById("image-project3").style.display = "none";
-  document.getElementById("link-project3").style.display = "none";
-}
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById("image-project" + i).style.display = "none";
+    document.getElementById("link-project" + i).style.display = "none";
+    document.getElementById("project-button" + i).style.backgroundColor =
+      "var(--medium-dark-blue)";
+  }
 
-function openProject3() {
-  document.getElementById("none-project").style.display = "none";
-  document.getElementById("project-demo").style.display = "block";
-  document.getElementById("image-project1").style.display = "none";
-  document.getElementById("link-project1").style.display = "none";
-  document.getElementById("image-project2").style.display = "none";
-  document.getElementById("link-project2").style.display = "none";
-  document.getElementById("image-project3").style.display = "block";
-  document.getElementById("link-project3").style.display = "block";
+  document.getElementById("image-project" + id).style.display = "block";
+  document.getElementById("link-project" + id).style.display = "block";
+  document.getElementById("project-button" + id).style.backgroundColor =
+    "var(--active-blue)";
 }
 
 function closeProject() {
   document.getElementById("none-project").style.display = "block";
   document.getElementById("project-demo").style.display = "none";
-  document.getElementById("image-project1").style.display = "none";
-  document.getElementById("link-project1").style.display = "none";
-  document.getElementById("image-project2").style.display = "none";
-  document.getElementById("link-project2").style.display = "none";
-  document.getElementById("image-project3").style.display = "none";
-  document.getElementById("link-project3").style.display = "none";
 }
 
 // CONTACT
@@ -110,52 +89,87 @@ function sendButton() {
 
   const regexEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 
-  let checkEmail = regexEmail.test(emailValue);
-  let checkTitle = titleValue != "";
-  let checkContent = contentValue != "";
+  // let checkEmail = regexEmail.test(emailValue);
+  // let checkTitle = titleValue != "";
+  // let checkContent = contentValue != "";
   // console.log(checkEmail);
   // console.log(checkContent);
+
+  // document.getElementById("email-input").style.border =
+  //   "1px solid var(--border-color)";
+  // document.getElementById("content-input").style.border =
+  //   "1px solid var(--border-color)";
+
+  // if (checkEmail == false) {
+  //   document.getElementById("email-input").style.border = "3px solid red";
+  //   alert("Invalid email! Please re-enter your email!");
+  // }
+
+  // if (checkContent == false) {
+  //   document.getElementById("content-input").style.border = "3px solid red";
+  //   alert("Invalid content! Please check the content again!");
+  // }
+
+  // if (checkContent == true && checkEmail == true) {
+  //   if (checkTitle == false) {
+  //     if (confirm("You haven't entered a title! Do you want to continue?")) {
+
+  //       document.getElementById("form-alert").style.display = "block";
+  //       document.getElementById("opacity-form").style.display = "block";
+
+  //       document.getElementById("email-from").value = emailValue;
+  //       document.getElementById("title-output").value = titleValue;
+  //       document.getElementById("content-output").value = contentValue;
+  //     }
+  //   } else {
+  //     document.getElementById("form-alert").style.display = "block";
+  //     document.getElementById("opacity-form").style.display = "block";
+
+  //     document.getElementById("email-from").value = emailValue;
+  //     document.getElementById("title-output").value = titleValue;
+  //     document.getElementById("content-output").value = contentValue;
+  //   }
+  // }
+
+  // GPT
+  let errors = []; // FIXED: Dùng mảng thay vì nhiều alert
 
   document.getElementById("email-input").style.border =
     "1px solid var(--border-color)";
   document.getElementById("content-input").style.border =
     "1px solid var(--border-color)";
 
-  if (checkEmail == false) {
+  if (!regexEmail.test(emailValue)) {
     document.getElementById("email-input").style.border = "3px solid red";
-    alert("Invalid email! Please re-enter your email!");
+    errors.push("Invalid email! Please re-enter your email!");
   }
 
-  if (checkContent == false) {
+  if (contentValue.trim() === "") {
     document.getElementById("content-input").style.border = "3px solid red";
-    alert("Invalid content! Please check the content again!");
+    errors.push("Invalid content! Please check the content again!");
   }
 
-  if (checkContent == true && checkEmail == true) {
-    if(checkTitle == false)
-    {
-      if (confirm("You haven't entered a title! Do you want to continue?")) {
-        // let contactForm = [emailValue, titleValue, contentValue];
-        // console.log(contactForm);
-  
-        document.getElementById("form-alert").style.display = "block";
-        document.getElementById("opacity-form").style.display = "block";
-  
-        document.getElementById("email-from").value = emailValue;
-        document.getElementById("title-output").value = titleValue;
-        document.getElementById("content-output").value = contentValue;
-      }
-    }
-    else {
-
-      document.getElementById("form-alert").style.display = "block";
-      document.getElementById("opacity-form").style.display = "block";
-
-      document.getElementById("email-from").value = emailValue;
-      document.getElementById("title-output").value = titleValue;
-      document.getElementById("content-output").value = contentValue;
-    }
+  if (errors.length > 0) {
+    alert(errors.join("\n")); // FIXED: Gộp tất cả lỗi vào một alert
+    return;
   }
+
+  if (
+    titleValue.trim() === "" &&
+    !confirm("You haven't entered a title! Do you want to continue?")
+  ) {
+    return;
+  }
+
+  document.getElementById("form-alert").style.display = "block";
+  document.getElementById("opacity-form").style.display = "block";
+
+  document.getElementById("email-from").value = emailValue;
+  document.getElementById("title-output").value = titleValue;
+  document.getElementById("content-output").value = contentValue;
+
+  // FIXED: Reset form sau khi gửi
+  // resetButton(); 
 }
 
 function closeAlert() {
