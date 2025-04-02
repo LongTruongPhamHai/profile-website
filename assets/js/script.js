@@ -68,6 +68,16 @@ function openProject(id) {
 function closeProject() {
   document.getElementById("none-project").style.display = "block";
   document.getElementById("project-demo").style.display = "none";
+  document.getElementById("other-project").style.backgroundColor =
+    "var(--medium-dark-blue)";
+  document.getElementById("other-project").style.transform =
+    "none";
+  for (let i = 1; i <= 3; i++) {
+    document.getElementById("image-project" + i).style.display = "none";
+    document.getElementById("link-project" + i).style.display = "none";
+    document.getElementById("project-button" + i).style.backgroundColor =
+      "var(--medium-dark-blue)";
+  }
 }
 
 // CONTACT
@@ -88,48 +98,6 @@ function sendButton() {
   let contentValue = document.getElementById("content-input").value;
 
   const regexEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-
-  // let checkEmail = regexEmail.test(emailValue);
-  // let checkTitle = titleValue != "";
-  // let checkContent = contentValue != "";
-  // console.log(checkEmail);
-  // console.log(checkContent);
-
-  // document.getElementById("email-input").style.border =
-  //   "1px solid var(--border-color)";
-  // document.getElementById("content-input").style.border =
-  //   "1px solid var(--border-color)";
-
-  // if (checkEmail == false) {
-  //   document.getElementById("email-input").style.border = "3px solid red";
-  //   alert("Invalid email! Please re-enter your email!");
-  // }
-
-  // if (checkContent == false) {
-  //   document.getElementById("content-input").style.border = "3px solid red";
-  //   alert("Invalid content! Please check the content again!");
-  // }
-
-  // if (checkContent == true && checkEmail == true) {
-  //   if (checkTitle == false) {
-  //     if (confirm("You haven't entered a title! Do you want to continue?")) {
-
-  //       document.getElementById("form-alert").style.display = "block";
-  //       document.getElementById("opacity-form").style.display = "block";
-
-  //       document.getElementById("email-from").value = emailValue;
-  //       document.getElementById("title-output").value = titleValue;
-  //       document.getElementById("content-output").value = contentValue;
-  //     }
-  //   } else {
-  //     document.getElementById("form-alert").style.display = "block";
-  //     document.getElementById("opacity-form").style.display = "block";
-
-  //     document.getElementById("email-from").value = emailValue;
-  //     document.getElementById("title-output").value = titleValue;
-  //     document.getElementById("content-output").value = contentValue;
-  //   }
-  // }
 
   // GPT
   let errors = []; // FIXED: Dùng mảng thay vì nhiều alert
@@ -169,7 +137,7 @@ function sendButton() {
   document.getElementById("content-output").value = contentValue;
 
   // FIXED: Reset form sau khi gửi
-  // resetButton(); 
+  // resetButton();
 }
 
 function closeAlert() {
